@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/html1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Klik3 Remote</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="remote.css">
+</head>
+<body>
+	<div class="bkgd">
+		<div class="content_wrapper">
+			<!-- 第一排按鈕(menu,power) -->
+			<div class="group_wrap"> 
+				<button class="circle_btn light_pink_bg left" name="menu">
+					<img src="img/menu.png">
+				</button>
+				<button class="circle_btn light_pink_bg right" name="power">
+					<img src="img/power.png">
+				</button>
+			</div>
+
+			<!-- 第二排按鈕(prev,next,上下左右扇形) -->
+			<div class="group_wrap">
+				<button class="circle_btn purple_bg left marT30 pill_shape" name="prev">
+					<img src="img/prev.png">
+				</button>
+				<button class="circle_btn purple_bg right marT30 pill_shape" name="next">
+					<img src="img/next.png">
+				</button>
+				<!-- onclick="" 是為了讓svg裡的扇形在 safari mobile 可以被點擊到 -->
+				<div class="controller" onclick="">
+					<svg class="pie" width="173px" height="172px" viewBox="-2 -2 173 172" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <path id="top_btn" d="M83,0 C129.944204,0 168,38.0557963 168,85 L83,85 L83,0 Z" name="top"></path>
+					    <g id="arrow" transform="translate(130.9, 35.9) rotate(45) translate(-130.9, -35.9) translate(116.4, 27.9)">
+					        <rect id="pill" transform="translate(12.07, 5.28) rotate(50) translate(-12.07, -5.28) " x="11.07" y="0.28" width="2" height="10" rx="1"></rect>
+					        <rect id="pill" transform="translate(18.47, 5.28) rotate(-50) translate(-18.47, -5.28) " x="17.47" y="0.28" width="2" height="10" rx="1"></rect>
+					    </g>
+
+					    <path id="right_btn" d="M83,83 C129.944204,83 168,121.055796 168,168 L83,168 L83,83 Z" transform="translate(125.5, 125.5) rotate(90) translate(-125.5, -125.5)" name="right"></path>
+					    <g id="arrow" transform="translate(130.9, 131.9) rotate(135) translate(-130.9, -131.9) translate(116.4, 123.9)">
+					        <rect id="pill" transform="translate(12.07, 5.28) rotate(50) translate(-12.07, -5.28) " x="11.07" y="0.28" width="2" height="10" rx="1"></rect>
+					        <rect id="pill" transform="translate(18.47, 5.28) rotate(-50) translate(-18.47, -5.28) " x="17.47" y="0.28" width="2" height="10" rx="1"></rect>
+					    </g>
+
+					    <path id="bottom_btn" d="M-5.68434189e-14,83 C46.9442037,83 85,121.055796 85,168 L-5.68434189e-14,168 L-5.68434189e-14,83 Z" transform="translate(42.5, 125.5) rotate(180) translate(-42.5, -125.5)" name="bottom"></path>
+					    <g id="arrow" transform="translate(37.9, 131.9) rotate(-135) translate(-37.9, -131.9) translate(23.4, 123.9)">
+					        <rect id="pill" transform="translate(12.07, 5.28) rotate(50) translate(-12.07, -5.28) " x="11.07" y="0.28" width="2" height="10" rx="1"></rect>
+					        <rect id="pill" transform="translate(18.47, 5.28) rotate(-50) translate(-18.47, -5.28) " x="17.47" y="0.28" width="2" height="10" rx="1"></rect>
+					    </g>
+
+					    <path id="left_btn" d="M0,0 C46.9442037,0 85,38.0557963 85,85 L0,85 L0,0 Z" transform="translate(42.5, 42.5) rotate(-90) translate(-42.5, -42.5)" name="left"></path>
+					    <g id="arrow" transform="translate(37.9, 35.9) rotate(-45) translate(-37.9, -35.9) translate(23.4, 27.9)">
+					        <rect id="pill" transform="translate(12.07, 5.28) rotate(50) translate(-12.07, -5.28) " x="11.07" y="0.28" width="2" height="10" rx="1"></rect>
+					        <rect id="pill" transform="translate(18.47, 5.28) rotate(-50) translate(-18.47, -5.28) " x="17.47" y="0.28" width="2" height="10" rx="1"></rect>
+					    </g>
+					</svg>
+					<button class="mid_btn light_pink_bg ok_btn" name="ok">
+						<img src="img/ok.svg">
+					</button>
+				</div>
+			</div>
+
+			<!-- 第三排按鈕(rewind,forward,play/pause) -->
+			<div class="group_wrap marTSpace">
+				<button class="circle_btn purple_bg left marL15 marT15" name="rewind">
+					<img src="img/rewind.png">
+				</button>
+				<button class="circle_btn purple_bg right marR15 marT15" name="forward">
+					<img src="img/forward.png">
+				</button>
+				<button id="playBtn" class="circle_btn light_pink_bg marAuto play_btn large_circle"  name="play_pause">
+					<img src="img/play_pause.png">
+				</button>
+			</div>
+
+			<!-- 第四五排按鈕(左：stop,mute; 右：聲音高低) -->
+			<div class="group_wrap marTSpace padLR65">
+				<div class="left">
+					<button class="circle_btn purple_bg" name="stop">
+						<img src="img/stop.png">
+					</button>
+					<button id="muteBtn" class="circle_btn purple_bg marT35" name="mute">
+						<img src="img/mute.png">
+					</button>
+				</div>
+				<div class="right">
+					<button class="circle_btn purple_bg" name="vol_up">
+						<img src="img/vol_up.png">
+					</button>
+					<p class="word_vol">VOL</p>
+					<button class="circle_btn purple_bg" name="vol_down">
+						<img src="img/vol_down.png">
+					</button>
+				</div>
+			</div>
+
+			<!-- 最後一排按鈕(subtitle,audio,info,setting) -->
+			<div class="flex_equal_space marTSpace">
+				<button class="circle_btn purple_bg" name="subtitle">
+					<img src="img/subtitle.png">
+				</button>
+				<button class="circle_btn purple_bg" name="audio">
+					<img src="img/audio.png">
+				</button>
+				<button class="circle_btn purple_bg" name="info">
+					<img src="img/info.png">
+				</button>
+				<button class="circle_btn purple_bg" name="setting">
+					<img src="img/setting.png">
+				</button>
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+<script type="text/javascript">
+
+	// 讓 css 的 active style 可以顯示
+	document.body.addEventListener("touchstart", function() {}, false);
+
+	// play, mute 按鈕可以 toggle 顏色
+	document.getElementById('playBtn').onclick = function() {
+	    this.classList.toggle('cur_active');
+	}
+	document.getElementById('muteBtn').onclick = function() {
+	    this.classList.toggle('cur_active');
+	}
+
+</script>
+</html>
+
+
+
+
+
+

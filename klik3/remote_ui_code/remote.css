@@ -1,0 +1,299 @@
+body {
+	padding: 0;
+	min-width: 320px;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.bkgd {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	border: 4px solid #625363;
+	border-radius: 35px;
+	background: #726173;
+	background: -webkit-linear-gradient(rgba(232,231,232,1), rgba(167,154,167,1)); /*Safari 5.1-6*/
+	background: -o-linear-gradient(rgba(232,231,232,1), rgba(167,154,167,1)); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(rgba(232,231,232,1), rgba(167,154,167,1)); /*Fx 3.6-15*/
+	background: linear-gradient(rgba(232,231,232,1), rgba(167,154,167,1)); /*Standard*/
+}
+
+.content_wrapper {
+	width: 100%;
+	padding: 1% 8%;
+}
+
+.content_wrapper button {
+	border: none;
+	display: block;
+	border-radius: 50px;
+	padding: 0;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.circle_btn {
+	width: 50px;
+	height: 50px;
+	transition: 0.3s;
+}
+
+.circle_btn:focus, .mid_btn:focus, .pie:focus {
+	outline: none;
+}
+.circle_btn:active, .mid_btn:active {
+	background-color: #362736;
+}
+
+
+.cur_active {
+	background-color: #362736 !important;
+}
+
+.content_wrapper button img {
+	width: 100%;
+	position: relative;
+	left: 0;
+}
+
+
+/* ------- controller(middle remote) settings ------- */
+.controller {
+    margin: auto;
+    position: relative;
+    width: 170px;
+    height: 170px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.controller .pie {
+	-webkit-transform: rotate(-45deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(-45deg); /* IE 9 */
+	transform: rotate(-45deg);
+}
+
+#top_btn, #right_btn, #bottom_btn, #left_btn {
+	fill: #625363;
+	stroke: none;
+	transition: 0.3s;
+	fill-rule: evenodd;
+}
+
+#top_btn:focus, #right_btn:focus,
+#bottom_btn:focus, #left_btn:focus {
+	outline: none;
+}
+
+#top_btn:active, #right_btn:active,
+#bottom_btn:active, #left_btn:active {
+	fill: #362736;
+}
+	
+#arrow {
+	fill: none;
+	stroke: none;
+	fill-rule: evenodd;
+}
+
+#pill {
+	fill: #eeeeee;
+}
+
+.mid_btn {
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: 50.5%;
+	left: 50.5%;
+	-webkit-transform: translate(-49.5%, -49.5%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translate(-49.5%, -49.5%); /* IE 9 */
+	transform: translate(-49.5%, -49.5%);
+	transition: 0.3s;
+}
+
+/* ------- small adjustment settings ------- */
+.word_vol {
+	margin: 4px 0;
+	padding-left: 10px;
+	font-family: Arial, sans-serif;
+	color: #412E41;
+}
+
+/* for clearing floats */
+.group_wrap:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+
+/* ------------- common_css -------------- */
+.light_pink_bg {
+	background-color: #A196A1;
+}
+.purple_bg {
+	background-color: #625363;
+}
+
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+
+.marTSpace {
+	margin-top: 7%;
+}
+.marT30 {
+	margin-top: 9%;
+}
+.marT35 {
+	margin-top: 45%;
+}
+.marT15 {
+	margin-top: 4%;
+}
+
+.marL15 {
+	margin-left: 5%;
+}
+.marL11p {
+	margin-left: 11.5%;
+}
+
+.marR15 {
+	margin-right: 5%;
+}
+.marR11p {
+	margin-right: 11.5%;
+}
+
+.padLR65 {
+	box-sizing: border-box;
+	padding: 0 21%;
+}
+.marAuto {
+	margin: auto;
+}
+
+.large_circle {
+	width: 80px;
+	height: 80px;
+}
+.pill_shape {
+	width: 40px;
+	height: 120px;
+}
+
+.flex_equal_space {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+/* ------------------- media_queries -------------------- */
+
+/* for laptops only */
+@media only screen and (min-device-width: 1025px) {
+	body {
+		width: 375px;
+	}
+
+	.content_wrapper {
+		padding: 7% 8%;
+	}
+
+	.circle_btn:hover, .mid_btn:hover {
+		background-color: #7E6D7F;
+	}
+	.circle_btn:focus, .mid_btn:focus, .pie:focus {
+	outline: none;
+	}
+	.circle_btn:active, .mid_btn:active {
+		background-color: #362736;
+	}
+
+	#top_btn:hover, #right_btn:hover,
+	#bottom_btn:hover, #left_btn:hover {
+		fill: #7E6D7F;
+	}
+	#top_btn:focus, #right_btn:focus,
+	#bottom_btn:focus, #left_btn:focus {
+		outline: none;
+	}
+	#top_btn:active, #right_btn:active,
+	#bottom_btn:active, #left_btn:active {
+		fill: #362736;
+	}
+
+}
+
+/* for ipad portrait */
+@media only screen 
+and (min-device-width : 768px) and (max-device-width : 1024px) 
+and (orientation : portrait) {
+	body, html {
+		width: 375px;
+		margin: 0 auto;
+	}
+
+	.content_wrapper {
+		padding: 7% 8%;
+	}
+}
+
+
+/* for ipad landscape */
+@media only screen 
+and (min-device-width : 768px) and (max-device-width : 1024px) 
+and (orientation : landscape) {
+	body, html {
+		height: 100%;
+	}
+
+	.marTSpace {
+		margin-top: 10%;
+	}
+
+}
+
+/* for iphone5/5s portrait */
+@media only screen and (min-device-width: 320px) 
+  and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+  	body, html {
+		height: 100vh;
+		width: 100vw;
+	}
+}
+
+/* for iphone6/7 portrait */
+@media only screen and (min-device-width: 375px) 
+  and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+	body, html {
+		height: 100vh;
+		width: 100vw;
+	}
+}
+
+/* for iphone6+/7+ protrait */
+@media only screen and (min-device-width: 414px) 
+  and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+	body, html {
+		height: 100vh;
+		width: 100vw;
+	}
+}
+
+
+
+
+
+
